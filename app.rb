@@ -13,9 +13,9 @@ class App < Sinatra::Application
 	end
 
 	post '/translation' do
-		@sentence = params["birthday"]
-		piglatin = PigLatin.new(@sentence)
+		piglatin = PigLatin.new(params["sentence"])
 		@message = piglatin.array_to_string
+		@sentence = params["sentence"]
 		erb :results
 	end
 
