@@ -25,7 +25,12 @@ class PigLatin
 
 	def apply_rules
 		parse_string.collect do |word|
-			if word.length > 1
+			if word.length > 1 && 	word.count("a") != 0 ||
+									word.count("e") != 0 ||
+									word.count("i") != 0 ||
+									word.count("o") != 0 ||
+									word.count("u") != 0 ||
+									word.count("y") != 0
 				counter = 0
 				while 	word[counter] != "a" && word[counter] != "e" &&  
 						word[counter] != "i" && word[counter] != "o" && 
