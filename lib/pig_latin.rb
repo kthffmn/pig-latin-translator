@@ -5,8 +5,15 @@ class PigLatin
 	attr_reader :string, :punctuation
 
 	def initialize(string)
-		@string = string[0..-2] # removes punctuation
-		@punctuation = string[-1]  # gets punctuation
+		if string[-1] == "." || string[-1] == "!" || string[-1] == "?" 
+			@string = string[0..-2] # removes punctuation
+			@punctuation = string[-1]  # gets punctuation
+		else
+			@string = string
+			@punctuation = ""
+		end
+		@string
+		@punctuation
 	end
 
 	def parse_string
