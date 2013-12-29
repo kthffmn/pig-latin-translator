@@ -24,28 +24,18 @@ class PigLatin
 	end
 
 	def apply_rules
-		parse_string.collect do |s|
-			if s.length > 1
-				if  s[0..1].downcase == "sh"  || 
-					s[0..1].downcase == "th"  ||
-					s[0..1].downcase == "qu"
-					first_letters = s[0..1]
-					string = s[2..-1]
-					"#{string}#{first_letters}ay"
-				elsif   s.downcase == "is" 	    || s.downcase == "sigh"    || 
-						s.downcase == "my"      || s.downcase == "by"      ||
-						s.downcase == "buy"     || s[0].downcase == "i"    ||
-						s[0].downcase == "a"	|| s[0].downcase == "e"    ||
-						s[0].downcase == "o"    || s[0].downcase == "u"    || 
-						s[0].downcase == "y"
-					"#{s}ay"				
-				else
-					first_letter = s[0]
-					string = s[1..-1]
-					"#{string}#{first_letter}ay"
+		parse_string.collect do |word|
+			if word.length > 1
+				counter = 0
+				while 	word[counter] != "a" && word[counter] != "e" &&  
+						word[counter] != "i" && word[counter] != "o" && 
+						word[counter] != "u" && word[counter] != "y"
+					word.insert(-1, "#{word[counter]}")
+					word.slice!(0)
 				end
+				"#{word}ay"	
 			else
-				"#{s}ay"
+				"#{word}ay"
 			end
 		end
 	end
