@@ -32,12 +32,12 @@ class PigLatin
 
 	def apply_rules
 		parse_string.collect do |word|
-			if word.length > 1 && 	word.count("a") != 0 ||
-									word.count("e") != 0 ||
-									word.count("i") != 0 ||
-									word.count("o") != 0 ||
-									word.count("u") != 0 ||
-									word.count("y") != 0
+			if word.length > 1 && word[0] != "q" && word.count("a") != 0 ||
+													word.count("e") != 0 ||
+													word.count("i") != 0 ||
+													word.count("o") != 0 ||
+													word.count("u") != 0 ||
+													word.count("y") != 0
 				counter = 0
 				while 	word[counter] != "a" && word[counter] != "e" &&  
 						word[counter] != "i" && word[counter] != "o" && 
@@ -45,9 +45,11 @@ class PigLatin
 					word.insert(-1, "#{word[counter]}")
 					word.slice!(0)
 				end
-				"#{word}ay"	
-			else
 				"#{word}ay"
+			elsif word[0] != "q"
+				"#{word}ay"
+			else
+				"#{word[2..-1]}#{word[0..1]}ay"
 			end
 		end
 	end
