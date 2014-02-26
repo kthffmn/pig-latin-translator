@@ -1,6 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
 body {
-	color: white;
-	background: #9ADAF9
+	color: hotpink;
+	background: #9ADAF9;
+  font-family: 'Montserrat', 'Helvetica', 'Ariel', sans-serif;
 }
 
 text {
@@ -17,4 +20,41 @@ text {
 
 .exit {
   fill: #f391c4;
+}
+
+.title {
+  display: block;
+}
+
+.form {
+  display: inline-block;
+  position: relative;
+  left: 500px;
+}
+
+.translate {
+  position: absolute;
+  display: inline-block;
+  background-color: #f17ab8;
+  color: white;
+  width: 90px;
+  height: 40px;
+  border-radius: 5px;
+  box-shadow: none;
+  border: none;
+  font-size: 1em;
+  margin-left: 680px;
+  margin-top: 33px;
+}
+
+.whitebox {
+  position: absolute;
+  display: block;
+  width: 340px;
+  height: 40px;
+}
+
+.translate:hover{
+  background-color: hotpink;
+}
 }

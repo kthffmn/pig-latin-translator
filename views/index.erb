@@ -1,9 +1,11 @@
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script src="title.js"></script>
+<div class=title>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="title.js"></script>
+</div>
 
-<form action="/translation" method="POST">
-
-	<label for="sentence">Message to translate (please include proper punctuation):</label>
-	<input id="sentence" type="text" name="sentence">
-
-<button type="submit" value="submit">Translate!</button>
+<div class="form">
+  <form action="/translation" method="POST">
+  	<label for="sentence">Message to translate (please include proper punctuation):</label>
+  	<input id="sentence" type="text" name="sentence">
+  <button type="submit" value="submit" class="translate">Translate!</button>
+</div>

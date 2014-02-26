@@ -1,7 +1,7 @@
-//create our data (the alphabet)
-var alphabet = ["t", "i", "u", "v"];
-
 //set height and width of our container
+var piglatin = [["p", 0],["i", 1],["g",2],["l",3],["a",4],["t",5],["i",6],["n",7]];
+var igpayatinlay = [["i", 1],["g",2],["p", 0],["a", 8],["y", 9],["a",4],["t",5],["i",6],["n",7],["l",3],["a", 10],["y", 11]];
+
 var width = 960,
     height = 500;
 
@@ -17,7 +17,7 @@ function update(data) {
   // join new data with old elements, if any.
   //text is our Update variable
   var text = svg.selectAll("text")
-    .data(data, function(d) { return d; });
+    .data(data, function(d) { return d[1]; });
 
   //UPDATE
   text.attr("class", "update")
@@ -33,7 +33,7 @@ function update(data) {
       .attr("y", -60)
       .attr("x", function(d, i) { return i * 32; })
       .style("fill-opacity", 1e-6)
-      .text(function(d) { return d; })
+      .text(function(d) { return d[0]; })
     .transition()
       .duration(750)
       .attr("y", 0)
@@ -48,22 +48,14 @@ function update(data) {
       .remove();
 }
 
-//initial display
-update(alphabet);
+update(piglatin);
+var showingPigLatin = true;
 
-//grab random sample of letters
 setInterval(function() {
-  update(shuffle(alphabet)
-      .slice(0, Math.floor(Math.random() * 26))
-      .sort());
-}, 1500);
-
-// Shuffles the input array.
-function shuffle(array) {
-  var m = array.length, t, i;
-  while (m) {
-    i = Math.floor(Math.random() * m--);
-    t = array[m], array[m] = array[i], array[i] = t;
+  if (showingPigLatin) {
+    update(igpayatinlay);
+  } else {
+    update(piglatin);
   }
-  return array;
-}
+  showingPigLatin = !showingPigLatin;
+}, 2000);
