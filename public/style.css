@@ -3,7 +3,7 @@
 body {
 	color: hotpink;
 	background: #9ADAF9;
-  font-family: 'Montserrat', 'Helvetica', 'Ariel', sans-serif;
+  font-family: monospace;
 }
 
 text {
@@ -22,17 +22,29 @@ text {
   fill: #f391c4;
 }
 
-.title {
+.heading {
   display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 450px;
 }
 
-.form {
+.outerform {
+  text-align: center;
+}
+
+.myform {
   display: inline-block;
   position: relative;
-  left: 500px;
+  height: 80px;
+  text-align: center;
 }
 
-.translate {
+.results {
+  font-size: 2em;
+}
+
+.buttonz {
   position: absolute;
   display: inline-block;
   background-color: #f17ab8;
@@ -43,18 +55,38 @@ text {
   box-shadow: none;
   border: none;
   font-size: 1em;
-  margin-left: 680px;
-  margin-top: 33px;
 }
 
 .whitebox {
   position: absolute;
   display: block;
-  width: 340px;
+  width: 350px;
   height: 40px;
+  margin: 0 auto;
+  display: block;
 }
 
-.translate:hover{
+.buttonz:hover{
   background-color: hotpink;
 }
+
+.translate {
+  right: 0px;
 }
+
+.home {
+
+}
+
+a:visited {
+  text-decoration:none;
+  color: white;
+}
+
+
+a:hover {
+  text-decoration:none;
+  color: white;
+}
+
+a:active {text-decoration:none;}

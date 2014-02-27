@@ -2,10 +2,10 @@
 var piglatin = [["p", 0],["i", 1],["g",2],["l",3],["a",4],["t",5],["i",6],["n",7]];
 var igpayatinlay = [["i", 1],["g",2],["p", 0],["a", 8],["y", 9],["a",4],["t",5],["i",6],["n",7],["l",3],["a", 10],["y", 11]];
 
-var width = 960,
-    height = 500;
+var width = 450,
+    height = 100;
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select(".heading").append("svg")
     .attr("width", width)
     .attr("height", height)
   .append("g")
