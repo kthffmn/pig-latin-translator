@@ -1,11 +1,12 @@
-//set height and width of our container
-var piglatin = [["p", 0],["i", 1],["g",2],["l",3],["a",4],["t",5],["i",6],["n",7]];
-var igpayatinlay = [["i", 1],["g",2],["p", 0],["a", 8],["y", 9],["a",4],["t",5],["i",6],["n",7],["l",3],["a", 10],["y", 11]];
+$(function() {
+
+// var initialIds = <%= @initial_ids %>;
+// var resultIds = <%= @result_ids %>;
 
 var width = 450,
     height = 100;
 
-var svg = d3.select(".heading").append("svg")
+var svg = d3.select(".yo").append("svg")
     .attr("width", width)
     .attr("height", height)
   .append("g")
@@ -48,14 +49,16 @@ function update(data) {
       .remove();
 }
 
-update(piglatin);
+update(initialIds);
 var showingPigLatin = true;
 
 setInterval(function() {
   if (showingPigLatin) {
-    update(igpayatinlay);
+    update(resultIds);
   } else {
-    update(piglatin);
+    update(initialIds);
   }
   showingPigLatin = !showingPigLatin;
 }, 2000);
+
+});

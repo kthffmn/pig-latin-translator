@@ -13,9 +13,20 @@ class App < Sinatra::Application
 	end
 
 	post '/translation' do
-		piglatin = PigLatin.new(params["sentence"])
+    @sentence = params["sentence"]
+		piglatin = PigLatin.new(@sentence)
 		@message = piglatin.array_to_string
-		@sentence = params["sentence"]
+
+    @initial_ids = @sentence.split("").zip(piglatin.initial_ids)
+    if piglatin.punctuation != ""
+      @initial_ids[-1][1] = -1 
+    end
+
+    @result_ids = @message.split("").zip(piglatin.result_ids) # [101, 102, 103, 104, 100]
+    if piglatin.punctuation != ""
+      @result_ids[-1][1] = -1 
+    end
+
 		erb :results
 	end
 

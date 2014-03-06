@@ -1,14 +1,23 @@
 <div class="heading">
   <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script src="title.js"></script>
+  <script>
+    var initialIds = <%= @initial_ids %>;
+    var resultIds = <%= @result_ids %>;
+  </script>
+  <script src="animation.js"></script>
 </div>
 
 <div class="outerform">
   <div class="myform">
-    <div class="results">
+<!--     <div class="results">
       <p><b>Sentence:</b> <%= @sentence %></p>
       <p><b>Translation:</b> <%= @message %></p>
+      <p><b>Initial ids:<b> <%= @initial_ids %></p>
+      <p><b>Result ids:<b> <%= @result_ids %></p> 
       <p><a class="home buttonz" href="/">Home</a>
+    </div> -->
+    <div class="yo">
     </div>
   </div>
 </div>
