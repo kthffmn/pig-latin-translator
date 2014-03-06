@@ -3,14 +3,14 @@ $(function() {
 // var initialIds = <%= @initial_ids %>;
 // var resultIds = <%= @result_ids %>;
 
-var width = 450,
+var width = 1000,
     height = 100;
 
 var svg = d3.select(".yo").append("svg")
     .attr("width", width)
     .attr("height", height)
   .append("g")
-    .attr("transform", "translate(32," + (height / 2) + ")");
+    .attr("transform", "translate(20," + (height / 2) + ")");
 
 function update(data) {
 
@@ -24,7 +24,7 @@ function update(data) {
   text.attr("class", "update")
     .transition()
       .duration(750)
-      .attr("x", function(d, i) { return i * 32; });
+      .attr("x", function(d, i) { return i * 16; });
 
   //ENTER
   //create new elements as needed
@@ -32,7 +32,7 @@ function update(data) {
       .attr("class", "enter")
       .attr("dy", ".35em")
       .attr("y", -60)
-      .attr("x", function(d, i) { return i * 32; })
+      .attr("x", function(d, i) { return i * 16; })
       .style("fill-opacity", 1e-6)
       .text(function(d) { return d[0]; })
     .transition()

@@ -29,6 +29,10 @@ text {
   width: 450px;
 }
 
+.yo text {
+  font-size: 20px;
+}
+
 .outerform {
   text-align: center;
 }
@@ -43,6 +47,7 @@ text {
 .results {
   font-size: 2em;
 }
+
 
 .buttonz {
   position: absolute;
